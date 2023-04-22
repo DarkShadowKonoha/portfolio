@@ -37,3 +37,21 @@ function setTheme(mode){
 
     localStorage.setItem('theme', mode)
 }
+
+// Skills toggle
+
+const elemToggleFunc = function (elem) { elem.classList.toggle("active"); }
+
+const toggleBtnBox = document.querySelector("[data-toggle-box]");
+const toggleBtns = document.querySelectorAll("[data-toggle-btn]");
+const skillsBox = document.querySelector("[data-skills-box]");
+
+for (let i = 0; i < toggleBtns.length; i++) {
+  toggleBtns[i].addEventListener("click", function () {
+    console.log('Toggle')
+    elemToggleFunc(toggleBtnBox);
+    for (let i = 0; i < toggleBtns.length; i++) { elemToggleFunc(toggleBtns[i]); }
+    elemToggleFunc(skillsBox);
+
+  });
+}
